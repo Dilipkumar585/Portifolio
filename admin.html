@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | Dilip Kumar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #0b1120;
+            color: white;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* LOGIN */
+
+        #loginSection {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-box {
+            width: min(420px, 100%);
+            padding: 35px;
+            border-radius: 20px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        .login-box h1 {
+            text-align: center;
+            margin-bottom: 8px;
+        }
+
+        .login-box p {
+            text-align: center;
+            opacity: 0.6;
+            margin-bottom: 25px;
+            font-size: 14px;
+        }
+
+        input {
+            width: 100%;
+            height: 52px;
+            margin-bottom: 15px;
+            padding: 0 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(255,255,255,0.1);
+            outline: none;
+            background: rgba(255,255,255,0.06);
+            color: white;
+            font-family: inherit;
+        }
+
+        input:focus {
+            border-color: #2563eb;
+        }
+
+        button {
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-family: inherit;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        #loginBtn {
+            width: 100%;
+            height: 52px;
+        }
+
+        #loginError {
+            margin-top: 15px;
+            text-align: center;
+            color: #ef4444;
+            font-size: 13px;
+        }
+
+        /* DASHBOARD */
+
+        #dashboard {
+            display: none;
+            padding: 40px 0;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            gap: 20px;
+        }
+
+        .topbar h1 {
+            font-size: 28px;
+        }
+
+        .topbar p {
+            opacity: 0.6;
+            font-size: 13px;
+        }
+
+        #logoutBtn {
+            padding: 12px 20px;
+        }
+
+        /* STATS */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            padding: 22px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .stat-card span {
+            opacity: 0.6;
+            font-size: 13px;
+        }
+
+        .stat-card h2 {
+            margin-top: 8px;
+            font-size: 28px;
+        }
+
+        /* MESSAGES */
+
+        .messages {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message-card {
+            padding: 22px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+
+        .message-header h3 {
+            font-size: 17px;
+        }
+
+        .message-email {
+            opacity: 0.6;
+            font-size: 13px;
+        }
+
+        .message-text {
+            line-height: 1.7;
+            opacity: 0.85;
+            margin-bottom: 15px;
+            word-break: break-word;
+        }
+
+        .message-status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            background: rgba(37,99,235,0.15);
+            color: #60a5fa;
+        }
+
+        .empty {
+            text-align: center;
+            padding: 50px;
+            opacity: 0.5;
+        }
+
+        @media (max-width: 700px) {
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .message-header {
+                flex-direction: column;
+            }
+
+        }
+
+        .message-actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 18px;
+}
+
+.message-actions button {
+    padding: 9px 15px;
+    font-size: 12px;
+}
+
+.read-btn {
+    background: #16a34a;
+}
+
+.delete-btn {
+    background: #dc2626;
+}
+
+.read-label {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background: rgba(34, 197, 94, 0.12);
+    color: #22c55e;
+    font-size: 12px;
+}
+
+@media (max-width: 500px) {
+
+    .message-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .message-actions button {
+        width: 100%;
+    }
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+
+    <section id="loginSection">
+
+        <div class="login-box">
+
+            <h1>Admin Login</h1>
+
+            <p>Dilip Kumar Portfolio</p>
+
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="adminEmail"
+                    placeholder="Admin Email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="adminPassword"
+                    placeholder="Password"
+                    required
+                >
+
+                <button type="submit" id="loginBtn">
+                    Login
+                </button>
+
+            </form>
+
+            <div id="loginError"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard">
+
+        <div class="container">
+
+            <div class="topbar">
+
+                <div>
+                    <h1>Admin Dashboard</h1>
+                    <p>Portfolio Contact Messages</p>
+                </div>
+
+                <button id="logoutBtn">
+                    Logout
+                </button>
+
+            </div>
+
+
+       <!-- STATS -->
+
+<div class="stats">
+
+    <div class="stat-card">
+
+        <span>Total Messages</span>
+
+        <h2 id="totalMessages">0</h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <span>New Messages</span>
+
+        <h2 id="newMessages">0</h2>
+
+    </div>
+
+    <div class="stat-card">
+
+        <span>Read Messages</span>
+
+        <h2 id="readMessages">0</h2>
+
+    </div>
+
+</div>
+
+
+<!-- SEARCH -->
+
+<div class="search-box">
+
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="🔎 Search by name, email or message..."
+    >
+
+</div>
+
+            <!-- MESSAGES -->
+
+            <div class="messages" id="messagesContainer">
+
+                <div class="empty">
+                    Loading messages...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <script type="module" src="admin.js"></script>
+
+</body>
+
+</html>

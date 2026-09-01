@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio Website</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="loader"></div>
+
+<div id="bg-animation"></div>
+
+<header>
+
+    <div class="logo">WEBO
+      <img class="logo-img" src="https://res.cloudinary.com/dvp1r27m0/image/upload/v1778744226/ChatGPT_Image_May_14_2026_01_05_38_PM_svdx4q.png" alt="logo">
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-text">
+
+      <h1>WEB-FULLSTACK<span>Developer</span> </h1>
+
+      <p>
+        Hi, I’m M. Dilip Kumar, a B.Tech graduate and aspiring Software Engineer from India.
+        I am passionate about Web Development and Application Development with skills in
+        HTML, CSS, JavaScript, React.js, and Firebase.
+      </p>
+
+      <a href="#contact" class="contact-btn">Contact Me</a>
+
+    </div>
+
+    <div class="hero-image">
+
+      <div class="circle"></div>
+
+      <img src="https://res.cloudinary.com/dvp1r27m0/image/upload/v1778746249/Gemini_Generated_Image_e8fw9me8fw9me8fw_fwfpqy.png" alt="profile">
+
+    </div>
+
+</section>
+
+<section class="services" id="services">
+
+    <h2>My Expertise</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="icon">&lt;/&gt;</div>
+        <h3>Web Development</h3>
+        <p>Create responsive websites with modern technologies.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">▣</div>
+        <h3>Backend Development</h3>
+        <p>Secure APIs and scalable backend applications.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">✎</div>
+        <h3>UI Design</h3>
+        <p>Beautiful modern interfaces with clean UX.</p>
+      </div>
+
+    </div>
+
+</section>
+
+<section class="projects" id="projects">
+
+    <h2>Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-box">
+        <h3>Portfolio Website</h3>
+        <p>Modern animated personal website.</p>
+      </div>
+
+      <div class="project-box">
+        <h3>Fuel Delivery App</h3>
+        <p>Emergency fuel delivery mobile application.</p>
+      </div>
+
+      <div class="project-box">
+        <h3>E-Commerce UI</h3>
+        <p>Responsive shopping website design.</p>
+      </div>
+
+    </div>
+
+</section>
+
+<section class="contact" id="contact">
+
+    <h2>Contact Me</h2>
+
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <div class="message-wrapper">
+    <textarea
+        id="message"
+        placeholder="Message"
+        maxlength="500"
+        required
+    ></textarea>
+
+    <span id="charCount">0 / 500</span>
+</div>
+      <button type="submit">Send Message</button>
+    </form>
+
+</section>
+
+<div class="social-bar">
+
+    <div class="toggle-btn" id="toggleBtn">+</div>
+
+    <div class="social-icons" id="socialIcons">
+       <a href="https://youtube.com" target="_blank">
+        <ion-icon name="logo-youtube"></ion-icon>
+    </a>
+
+    <a href="https://www.linkedin.com/in/dilip-kumar-274b24366" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+
+    <a href="https://github.com/Dilipkumar585" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+    </a>
+
+    <a href="https://instagram.com" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+    </a>
+    </div>
+
+
+<div class="cursor"></div>
+<div class="cursor-blur"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script type="module" src="script.js"></script>
+<script type="module"
+src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js">
+</script>
+
+<script nomodule
+src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="module" src="script.js"> </script>
+</body>
+</html>
