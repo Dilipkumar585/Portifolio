@@ -187,7 +187,23 @@ nav a{
     transform:translateY(80px);
     transition:1s;
 }
+.resume-icon {
+    font-size: 42px;
+    color: #2878ff;
+    margin-bottom: 30px;
+}
 
+.project-box {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.project-box:hover {
+  transform: translateY(-5px);
+}
 .show{
     opacity:1;
     transform:translateY(0);
